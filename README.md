@@ -1,5 +1,9 @@
 # standard-healthcheck
 
+[![Build Status](https://travis-ci.org/julie-ng/standard-healthcheck.svg?branch=master)](https://travis-ci.org/julie-ng/standard-healthcheck)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/d00bb74152c7914dccdd/test_coverage)](https://codeclimate.com/github/julie-ng/standard-healthcheck/test_coverage)
+[![Maintainability](https://api.codeclimate.com/v1/badges/d00bb74152c7914dccdd/maintainability)](https://codeclimate.com/github/julie-ng/standard-healthcheck/maintainability)
+
 ## Install
 
 ```
