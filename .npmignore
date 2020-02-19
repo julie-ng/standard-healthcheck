@@ -1,0 +1,4 @@
+*.env
+*.log
+*.spec.js
+coverage/
