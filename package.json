@@ -1,6 +1,6 @@
 {
   "name": "standard-healthcheck",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Healthcheck endpoint for Express per IETF Standards",
   "main": "healthcheck.js",
   "scripts": {
