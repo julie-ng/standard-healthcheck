@@ -2,8 +2,8 @@
 
 const extendHelper = require('./extend')
 
-describe ('Helper', () => {
-	describe ('extend()', () => {
+describe('Helper', () => {
+	describe('extend()', () => {
 		let opts
 		let subject
 
@@ -17,8 +17,8 @@ describe ('Helper', () => {
 			}
 		})
 
-		describe ('key exists in options', () => {
-			it ('adds keys to target object', () => {
+		describe('key exists in options', () => {
+			it('adds keys to target object', () => {
 				expect(extendHelper(subject, opts, 'hello')).toEqual({
 					a: 'b',
 					hello: 'world'
@@ -26,8 +26,8 @@ describe ('Helper', () => {
 			})
 		})
 
-		describe ('key does NOT exists in options', () => {
-			it ('does not affect target object', () => {
+		describe('key does NOT exists in options', () => {
+			it('does not affect target object', () => {
 				expect(extendHelper(subject, opts, 'nothing')).toEqual({
 					a: 'b'
 				})

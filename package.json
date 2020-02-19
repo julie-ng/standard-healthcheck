@@ -5,10 +5,12 @@
   "main": "app.js",
   "scripts": {
     "lint": "eslint .",
-    "lint:watch": "nodemon -w healthcheck*.js -w util --exec 'npm run lint'",
+    "lint:fix": "eslint --fix .",
+    "lint:watch": "nodemon -w healthcheck.js -w healthcheck.spec.js -w util --exec 'npm run lint'",
     "eslint": "eslint",
     "test": "jest --verbose",
-    "test:watch": "jest --verbose --watch"
+    "test:watch": "jest --verbose --watch",
+    "preflight": "npm run lint && npm run test && npm audit"
   },
   "repository": {
     "type": "git",
