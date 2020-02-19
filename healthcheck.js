@@ -1,5 +1,6 @@
-'use strict'
 /* eslint-disable no-prototype-builtins */
+'use strict'
+const utils = require('./util')
 
 class Healthcheck {
 	constructor (opts = {}) {
@@ -12,7 +13,7 @@ class Healthcheck {
 			status: 'pass'
 		}
 
-		_extend(body, this.props, 'description')
+		utils.extend(body, this.props, 'description')
 
 		body = {
 			...body,
@@ -31,25 +32,13 @@ class Healthcheck {
 		if (this.props.includeEnv) {
 			body.details.env = {}
 			this.props.includeEnv.forEach((envVar) => {
-				if (!_isSecret(envVar)) {
+				if (!utils.isSecret(envVar)) {
 					body.details.env[envVar] = process.env[envVar]
 				}
 			})
 		}
 		res.json(body)
 	}
-}
-
-function _extend (subj, opts, key) {
-	if (opts.hasOwnProperty(key)) {
-		subj[key] = opts[key]
-	}
-	return subj
-}
-
-function _isSecret (varname) {
-	const norm = varname.toUpperCase()
-	return (norm.endsWith('_KEY') || norm.endsWith('_SECRET') || norm.endsWith('_PASSWORD'))
 }
 
 module.exports = Healthcheck
