@@ -21,10 +21,11 @@ This tiny library exposes a health check endpoint in a **standard response forma
   "details": {
     "uptime": {
       "component_type": "system",
-      "observed_value": 8.73427267,
+      "observed_value": 4.08655409,
+      "human_readable": "0 days, 0 hours, 0 minutes, 4 seconds",
       "observed_unit": "s",
       "status": "pass",
-      "time": "2020-02-19T15:10:55.113Z"
+      "time": "2020-02-19T15:36:33.053Z"
     },
     "env": {
       "NODE_ENV": "development"

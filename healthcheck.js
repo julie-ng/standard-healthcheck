@@ -15,13 +15,15 @@ class Healthcheck {
 
 		utils.extend(body, this.props, 'description')
 
+		const uptimeSeconds = process.uptime()
 		body = {
 			...body,
 			version: this.props.version || 'unknown',
 			details: {
 				uptime: {
 					component_type: 'system',
-					observed_value: process.uptime(),
+					observed_value: uptimeSeconds,
+					human_readable: utils.humanUptime(uptimeSeconds),
 					observed_unit: 's',
 					status: 'pass',
 					time: new Date()
