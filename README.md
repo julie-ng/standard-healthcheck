@@ -13,28 +13,31 @@ This tiny library exposes a health check endpoint in a **standard response forma
 
 ### Example Output
 
+Example JSON response from [https://nodejs-demo.onazure.io/health](https://nodejs-demo.onazure.io/health)
+
 ```json
 {
   "status": "pass",
-  "description": "My demo app",
-  "version": "1.0",
+  "description": "A multipurpose dummy node.js app for cloud architecture demos",
+  "version": "0.2.1",
   "details": {
     "uptime": {
       "component_type": "system",
-      "observed_value": 4.08655409,
-      "human_readable": "0 days, 0 hours, 0 minutes, 4 seconds",
+      "observed_value": 74401.282209224,
+      "human_readable": "0 days, 20 hours, 40 minutes, 1 seconds",
       "observed_unit": "s",
       "status": "pass",
-      "time": "2020-02-19T15:36:33.053Z"
+      "time": "2020-02-20T13:05:11.307Z"
     },
     "env": {
-      "NODE_ENV": "development"
+      "WEBSITE_HOSTNAME": "azure-nodejs-demo.azurewebsites.net",
+      "WEBSITE_INSTANCE_ID": "c33cdebf5b0f427fdd331f28322f183c95c5320c0c952d9194ad7ce9867c2eaa"
     }
   }
 }
 ```
 
-For details, see [IETF draft document](https://tools.ietf.org/html/draft-inadarei-api-health-check-04).
+For details about schema, see [IETF draft document](https://tools.ietf.org/html/draft-inadarei-api-health-check-04).
 
 ## Usage
 
