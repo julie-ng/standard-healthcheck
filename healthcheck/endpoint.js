@@ -4,42 +4,6 @@ const extractEnv = require('./extract-env')
 const schema = require('./schema')
 const utils = require('./util')
 
-// class Healthcheck {
-// 	constructor (opts = {}) {
-// 		this.props = { ...opts }
-// 		this.endpoint =	this.endpoint.bind(this)
-// 	}
-
-// 	endpoint (req, res) {
-// 		let body = {
-// 			status: 'pass'
-// 		}
-
-// 		// utils.extend(body, this.props, 'description')
-
-// 		// const uptimeSeconds = process.uptime()
-// 		// body = {
-// 		// 	...body,
-// 		// 	version: this.props.version || 'unknown',
-// 		// 	details: {
-// 		// 		uptime: {
-// 		// 			component_type: 'system',
-// 		// 			observed_value: uptimeSeconds,
-// 		// 			human_readable: utils.humanUptime(uptimeSeconds),
-// 		// 			observed_unit: 's',
-// 		// 			status: 'pass',
-// 		// 			time: new Date()
-// 		// 		}
-// 		// 	}
-// 		// }
-
-// 		if (this.props.includeEnv) {
-//       body.details.env = extractEnv(this.props.includeEnv)
-// 		}
-// 		res.json(body)
-// 	}
-// }
-
 /**
  * Health check Endpoint
  *
