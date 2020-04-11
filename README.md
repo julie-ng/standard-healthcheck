@@ -41,28 +41,20 @@ For details about schema, see [IETF draft document](https://tools.ietf.org/html/
 
 ## Usage
 
-
 ```
 npm install --save standard-healthcheck
 ```
 
-And then import the library in your [Express.js](https://expressjs.com/) application:
+Then import the library in your [Express.js](https://expressjs.com/) application and add the route to your app:
 
 ```javascript
-const Healthcheck = require('standard-healthcheck')
+const healthcheck = require('standard-healthcheck')
 
-const healthcheck = new Healthcheck({
+app.get('/health', healthcheck({
 	version: '1.0',
 	description: 'My demo app',
 	includeEnv: ['NODE_ENV']
 })
-```
-
-And add the route to your app
-
-```javascript
-let app = express()
-app.get('/health', healthcheck.endpoint)
 ```
 
 ### Optional: Environment variables
