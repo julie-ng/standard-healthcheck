@@ -10,24 +10,24 @@ const utils = require('./util')
  * @reutrns {Object} base schema
  */
 function schema (body = {}) {
-  body.status = body.status || 'pass'
-  body.version = body.version || 'unknown'
+	body.status = body.status || 'pass'
+	body.version = body.version || 'unknown'
 
-  const uptimeSeconds = process.uptime()
+	const uptimeSeconds = process.uptime()
 
-  return {
-    ...body,
-    details: {
-      uptime: {
-        component_type: 'system',
-        observed_value: uptimeSeconds,
-        human_readable: utils.humanUptime(uptimeSeconds),
-        observed_unit: 's',
-        status: 'pass',
-        time: new Date()
-      }
-    }
-  }
+	return {
+		...body,
+		details: {
+			uptime: {
+				component_type: 'system',
+				observed_value: uptimeSeconds,
+				human_readable: utils.humanUptime(uptimeSeconds),
+				observed_unit: 's',
+				status: 'pass',
+				time: new Date()
+			}
+		}
+	}
 }
 
 module.exports = schema

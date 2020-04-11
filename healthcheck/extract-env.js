@@ -8,15 +8,15 @@ const utils = require('./util')
  * @returns {Object} key value pair of environment variables
  */
 function extractEnv (keys) {
- const vars = {}
+	const vars = {}
 
-  keys.forEach((envVar) => {
-    if (!utils.isSecret(envVar)) {
-      vars[envVar] = process.env[envVar]
-    }
-  })
+	keys.forEach((envVar) => {
+		if (!utils.isSecret(envVar)) {
+			vars[envVar] = process.env[envVar]
+		}
+	})
 
-  return vars
+	return vars
 }
 
 module.exports = extractEnv

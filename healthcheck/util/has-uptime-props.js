@@ -1,3 +1,4 @@
+/* eslint-disable no-prototype-builtins */
 module.exports = function (obj = {}) {
 	const props = [
 		'component_type',

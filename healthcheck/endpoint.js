@@ -2,7 +2,6 @@
 'use strict'
 const extractEnv = require('./extract-env')
 const schema = require('./schema')
-const utils = require('./util')
 
 /**
  * Health check Endpoint
@@ -15,15 +14,15 @@ const utils = require('./util')
  * @returns {function} endpoint with standard express.js interface: `function(req, res) {…}`
  */
 function healthcheck (opts = {}) {
-  const body = schema(opts)
-  const endpoint = function (req, res) {
+	const body = schema(opts)
+	const endpoint = function (req, res) {
 		if (opts.includeEnv) {
-      body.details = body.details || {}
-      body.details.env = extractEnv(opts.includeEnv)
+			body.details = body.details || {}
+			body.details.env = extractEnv(opts.includeEnv)
 		}
 		res.json(body)
-  }
-  return endpoint
+	}
+	return endpoint
 }
 
 module.exports = healthcheck
