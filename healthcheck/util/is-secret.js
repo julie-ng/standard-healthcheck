@@ -2,5 +2,9 @@
 
 module.exports = function (varname) {
 	const norm = varname.toUpperCase()
-	return (norm.endsWith('_KEY') || norm.endsWith('SECRET') || norm.endsWith('PASSWORD') || norm.endsWith('_PASS'))
+	return (norm.endsWith('_KEY') ||
+		norm.endsWith('SECRET') ||
+		norm.endsWith('PASSWORD') ||
+		norm.endsWith('_PASS')
+	)
 }

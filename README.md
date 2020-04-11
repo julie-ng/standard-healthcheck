@@ -51,9 +51,9 @@ Then import the library in your [Express.js](https://expressjs.com/) application
 const healthcheck = require('standard-healthcheck')
 
 app.get('/health', healthcheck({
-	version: '1.0',
-	description: 'My demo app',
-	includeEnv: ['NODE_ENV']
+    version: '1.0',
+    description: 'My demo app',
+    includeEnv: ['NODE_ENV']
 })
 ```
 
@@ -61,4 +61,4 @@ app.get('/health', healthcheck({
 
 The proposed standard because is friendly for debugging. You can ask standard-healthcheck to output some environment variables (not recommended for production!) via the `includeEnv` optional property.
 
-But it will ignore variables ending with `SECRET`, `PASSWORD`, and `_KEY` for security reasons.
+But it will ignore variables ending with `SECRET`, `PASSWORD`, `_KEY` and `_PASS` for security reasons.

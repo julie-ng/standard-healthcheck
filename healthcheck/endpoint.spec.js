@@ -100,6 +100,7 @@ describe('healthcheck endpoint', () => {
 		it('ignores "PASSWORD"-like vars', () => {
 			process.env.PASSPORT = 'american'
 			process.env.APP_PASSWORD = 'not-secure'
+			process.env.APP_PASS = 'not-secure'
 
 			result = _callEndpoint({
 				includeEnv: ['PASSPORT', 'APP_PASSWORD', 'APP_PASS']
@@ -107,6 +108,7 @@ describe('healthcheck endpoint', () => {
 
 			expect(result.details.env.PASSPORT).toEqual('american')
 			expect(result.details.env.APP_PASSWORD).toBeUndefined()
+			expect(result.details.env.APP_PASS).toBeUndefined()
 		})
 	})
 })
