@@ -2,7 +2,7 @@
   "name": "standard-healthcheck",
   "version": "0.1.0",
   "description": "Healthcheck endpoint for Express per IETF Standards",
-  "main": "healthcheck.js",
+  "main": "healthcheck/index.js",
   "scripts": {
     "audit": "npm audit --audit-level=moderate",
     "lint": "eslint .",
